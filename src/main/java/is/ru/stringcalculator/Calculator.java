@@ -8,12 +8,12 @@ public class Calculator {
 		if(text.equals("")){
 			return 0;
 		}
-		/*else if(text.startsWith("//"))
+		else if(text.contains(",") || text.contains("\n"))
 		{
-			String[] val = takeApart(text);		
-		}*/
+			return sum(splitNumbers(text));	
+		}
 		//If string contains newline character it will be replaced with a ','
-		else if(text.contains("\n"))
+		/*else if(text.contains("\n"))
 		{
 			text = text.replaceAll("\n", ",");
 			return sum(splitNumbers(text));
@@ -21,7 +21,7 @@ public class Calculator {
 
 		else if(text.contains(",")){
 			return sum(splitNumbers(text));
-		}
+		}*/
 		else
 			return 1;
 	}
@@ -31,7 +31,14 @@ public class Calculator {
 	}
 
 	private static String[] splitNumbers(String numbers){
-	    return numbers.split(",");
+	    //return numbers.split(",");
+	    String del = "[,\n]";
+	    if(numbers.startsWith("//")){
+	    	char delNumDos = numbers.charAt(2);
+	    	del = "[,\n" + delNumDos + "]";
+	    	numbers = numbers.substring(4);
+	    }
+	    return numbers.split(del);
 	}
       
     private static int sum(String[] numbers){
@@ -40,18 +47,7 @@ public class Calculator {
 		    total += toInt(number);
 		}
 		return total;
-    }
-
-    private static String[] takeApart(String text)
-    {
-    	String del = ",|\n";
-    	if(text.contains("//"))
-    	{
-    		del += "|" + text.substring(2, 3);
-    	}
-    }
-
-   
+    }   
 
 }
 
