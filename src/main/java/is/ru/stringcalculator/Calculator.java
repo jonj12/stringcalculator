@@ -4,17 +4,17 @@ public class Calculator {
 
 	public static int add(String text){
 		
-		return 1;
-		/*if(text.equals("")){
+		
+		if(text.equals("")){
 			return 0;
 		}
 		else if(text.contains(",")){
 			return sum(splitNumbers(text));
 		}
 		else
-			return 1;*/
+			return 1;
 	}
-/*
+
 	private static int toInt(String number){
 		return Integer.parseInt(number);
 	}
@@ -30,7 +30,7 @@ public class Calculator {
 		}
 		return total;
     }
-*/
+
 
 
 }
