@@ -52,7 +52,7 @@ public class CalculatorTest {
     	}
     }
 
-    /*@Test
+    @Test
     public void testnumToBig(){
     	try
     	{
@@ -63,7 +63,7 @@ public class CalculatorTest {
     	{
     		assertEquals("Number can not be over 1000: [2000]" , exc.getMessage());
     	}
-    }*/
+    }
 
 
 }

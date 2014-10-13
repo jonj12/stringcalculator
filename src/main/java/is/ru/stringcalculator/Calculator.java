@@ -18,10 +18,10 @@ public class Calculator {
 		{
 			return negative(text);
 		}
-		/*else
+		else
 		{
 			return negative(text);
-		}*/
+		}
 
 		//If string contains newline character it will be replaced with a ','
 		/*else if(text.contains("\n"))
@@ -33,8 +33,8 @@ public class Calculator {
 		else if(text.contains(",")){
 			return sum(splitNumbers(text));
 		}*/
-		else
-			return 1;
+		//else
+		//	return 1;
 	}
 
 	private static int toInt(String number){
