@@ -8,10 +8,10 @@ public class Calculator {
 		if(text.equals("")){
 			return 0;
 		}
-		else if(text.contains("//"))
+		/*else if(text.startsWith("//"))
 		{
-			return sum(delimiter(text));
-		}
+			String[] val = takeApart(text);		
+		}*/
 		//If string contains newline character it will be replaced with a ','
 		else if(text.contains("\n"))
 		{
@@ -40,6 +40,15 @@ public class Calculator {
 		    total += toInt(number);
 		}
 		return total;
+    }
+
+    private static String[] takeApart(String text)
+    {
+    	String del = ",|\n";
+    	if(text.contains("//"))
+    	{
+    		del += "|" + text.substring(2, 3);
+    	}
     }
 
    
