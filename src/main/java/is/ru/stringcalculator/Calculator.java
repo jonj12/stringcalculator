@@ -8,6 +8,17 @@ public class Calculator {
 		if(text.equals("")){
 			return 0;
 		}
+		else if(text.contains("//"))
+		{
+			return sum(delimiter(text));
+		}
+		//If string contains newline character it will be replaced with a ','
+		else if(text.contains("\n"))
+		{
+			text = text.replaceAll("\n", ",");
+			return sum(splitNumbers(text));
+		}
+
 		else if(text.contains(",")){
 			return sum(splitNumbers(text));
 		}
@@ -31,6 +42,7 @@ public class Calculator {
 		return total;
     }
 
-
+   
 
 }
+
