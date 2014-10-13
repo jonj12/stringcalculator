@@ -39,5 +39,31 @@ public class CalculatorTest {
     	assertEquals(3, Calculator.add("//;\n1;2"));
     }
 
+    @Test
+    public void testNegatives(){
+    	try
+    	{
+    		Calculator.add("2,-4,3,-5");
+    		
+    	}
+    	catch(IllegalArgumentException exc)
+    	{
+    		assertEquals("Negatives not allowed: [-4, -5]" , exc.getMessage());
+    	}
+    }
+
+    /*@Test
+    public void testnumToBig(){
+    	try
+    	{
+    		Calculator.add("2000,1,3,5");
+    		
+    	}
+    	catch(IllegalArgumentException exc)
+    	{
+    		assertEquals("Number can not be over 1000: [2000]" , exc.getMessage());
+    	}
+    }*/
+
 
 }
