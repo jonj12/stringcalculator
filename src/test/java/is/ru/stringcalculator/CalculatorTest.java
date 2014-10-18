@@ -23,22 +23,24 @@ public class CalculatorTest {
 	public void testTwoNumbers() {
 		assertEquals(3, Calculator.add("1,2"));
 	}	
-
+    //Nr.2
 	@Test
     public void testMultipleNumbers(){
     	assertEquals(6, Calculator.add("1,2,3"));
     }
-/*
+    //Nr.3
     @Test
     public void testNewLineChar(){
     	assertEquals(6, Calculator.add("1\n2,3"));
     }
-*/
+
+    //Nr.4
     @Test
-    public void testNewLineChar(){
+    public void testDifferentDelim(){
     	assertEquals(3, Calculator.add("//;\n1;2"));
     }
 
+    //Nr.5
     @Test
     public void testNegatives(){
     	try
@@ -51,9 +53,9 @@ public class CalculatorTest {
     		assertEquals("Negatives not allowed: [-4, -5]" , exc.getMessage());
     	}
     }
-
+    //Nr.6
     @Test
-    public void testnumToBig(){
+    public void testNumToBig(){
     	try
     	{
     		Calculator.add("2000,1,3,5");

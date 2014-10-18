@@ -86,10 +86,7 @@ public class Calculator {
     	{
     		throw new IllegalArgumentException("Negatives not allowed: " + ints.toString());
     	}
-    	//else 
-    	//{
     		return sum;
-    	//}
     }
 
 }
